@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const StyledPrintdataDiv = styled.div`
+export const StyledPrintDataDiv = styled.div`
   height: 120px;
   position: relative;
   display: flex;
@@ -50,4 +50,10 @@ export const StyledPrintEditBtn = styled.button`
   &:hover {
     scale: 1.3;
   }
+`;
+
+export const StyledContentDiv = styled.div`
+  margin-top: 20px;
+  flex: 2;
+  height: min(400px);
 `;

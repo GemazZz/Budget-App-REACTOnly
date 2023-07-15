@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Home from "./pages/home";
 import SignIn from "./pages/signin";
-import AddTransaction from "./pages/addTransaction";
+import SignUp from "./pages/signup";
+import Transaction from "./pages/transaction";
+import ForgetPass from "./pages/Forget password";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -15,20 +16,24 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/yrdy",
-    element: <div>ar.sdfsfsffs.</div>,
-  },
-  {
-    path: "/add-transaction",
-    elenemt: <div>\ ytdd</div>,
+    path: "/addtransaction",
+    element: <Transaction />,
   },
   {
     path: "/signin",
-    elenemt: <SignIn />,
+    element: <SignIn />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "/forgetpassword",
+    element: <ForgetPass />,
   },
   {
     path: "*",
-    elenemt: <div>not found</div>,
+    element: <div>Not found</div>,
   },
 ]);
 

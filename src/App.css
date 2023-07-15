@@ -6,4 +6,10 @@
 body {
   background-color: #222222;
   height: 90vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+Link {
+  text-decoration: none;
 }

@@ -1,4 +1,3 @@
-import { hover } from "@testing-library/user-event/dist/hover";
 import {
   StyledDiv,
   StyledCloseBtn,
@@ -13,7 +12,7 @@ import {
 } from "../components/styles/signStyle";
 import { Link } from "react-router-dom";
 
-const SignIn = () => {
+const ForgetPass = () => {
   return (
     <StyledDiv>
       <Link to={"/"}>
@@ -21,29 +20,20 @@ const SignIn = () => {
           <i className="fa-solid fa-xmark fa-2xl" style={{ color: "#764920" }} />
         </StyledCloseBtn>
       </Link>
-      <StyledTransactionH1>Sign in</StyledTransactionH1>
-      <div>
+      <StyledTransactionH1>Password Recovery</StyledTransactionH1>
+      <div style={{ position: "relative", left: "14.5px" }}>
         <StyledDateLabel htmlFor="Email">Email: </StyledDateLabel>
         <StyledDateInput type="email" id="Email" />
       </div>
-      <div>
-        <StyledAmountLabel htmlFor="amount">Password: </StyledAmountLabel>
+      <div style={{ position: "relative", left: "-5px" }}>
+        <StyledAmountLabel htmlFor="amount">New Password: </StyledAmountLabel>
         <StyledNumberInput type="password" id="amount" />
       </div>
-      <Link to={"/forgetpassword"} style={{ textDecorationLine: "none" }}>
-        <StyledForget>Forget Password?</StyledForget>
-      </Link>
       <Link to={"/"}>
-        <StyledSubmitBtn className="submit">Sign in</StyledSubmitBtn>
+        <StyledSubmitBtn className="submit">Update</StyledSubmitBtn>
       </Link>
-      <StyledNew>
-        Don't have an account?
-        <Link to={"/signup"} style={{ textDecorationLine: "#d1d1d1", color: "#764920", marginLeft: "4px" }}>
-          Register Here
-        </Link>
-      </StyledNew>
     </StyledDiv>
   );
 };
 
-export default SignIn;
+export default ForgetPass;

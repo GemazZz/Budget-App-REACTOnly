@@ -111,4 +111,3 @@ export const StyledFilterBtn = styled.button`
     scale: 1.1;
   }
 `;
-// export const StyledLabel2=styled.label

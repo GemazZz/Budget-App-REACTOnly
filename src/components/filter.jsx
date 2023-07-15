@@ -8,7 +8,7 @@ import {
   StyledInputNumber,
   StyledGreenLabel,
   StyledRedLabel,
-} from "./filterStyle";
+} from "./styles/filterStyle";
 
 const Filter = () => {
   return (
@@ -21,8 +21,8 @@ const Filter = () => {
         <StyledGreenLabel htmlFor="Income">Income </StyledGreenLabel>
         <StyledRadioInput type="radio" value="income" id="Income" name="source" />
 
-        <StyledRedLabel htmlFor="Expence">Expence </StyledRedLabel>
-        <StyledRadioInput type="radio" value="expence" id="Expence" name="source" />
+        <StyledRedLabel htmlFor="Expense">Expense </StyledRedLabel>
+        <StyledRadioInput type="radio" value="expense" id="Expense" name="source" />
       </div>
       <StyledLabel htmlFor="category">Category: </StyledLabel>
       <StyledSelect id="category">

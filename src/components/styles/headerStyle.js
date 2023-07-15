@@ -40,17 +40,18 @@ export const StyledBudgetApp = styled.p`
 export const StyledSignIn = styled.button`
   border: none;
   position: relative;
-  left: 210px;
+  left: 230px;
   cursor: pointer;
   background-color: transparent;
   transition: 0.25s;
-  &:hover {
+  /* &:hover {
     scale: 1.2;
-  }
+  } */
 `;
 
 export const StyledI = styled.i`
   transition: 0.25s;
+  margin-left: 20px;
   &:hover {
     scale: 1.2;
   }

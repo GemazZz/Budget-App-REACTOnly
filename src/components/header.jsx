@@ -1,4 +1,4 @@
-import { StyledHeaderDiv, StyledAddNewTransaction, StyledBudgetApp, StyledSignIn, StyledI } from "./headerStyle";
+import { StyledHeaderDiv, StyledAddNewTransaction, StyledBudgetApp, StyledSignIn, StyledI } from "./styles/headerStyle";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -7,14 +7,16 @@ const Header = () => {
       <StyledBudgetApp>
         <i className="fa-solid fa-chart-pie" style={{ color: "#764920" }}></i> Budget App
       </StyledBudgetApp>
-      <Link to={"/addnewtransaction"}>
+      <Link to={"/addtransaction"}>
         <StyledAddNewTransaction>Add New Transaction</StyledAddNewTransaction>
       </Link>
       <StyledSignIn>
-        <StyledI className="fa-solid fa-user fa-2xl" style={{ color: "#764920" }}></StyledI>
+        <Link to={"/signin"}>
+          <StyledI className="fa-solid fa-user fa-2xl" style={{ color: "#764920" }} />
+        </Link>
+        <StyledI className="fa-solid fa-arrow-right-from-bracket fa-2xl" style={{ color: "#bc1f1f" }} />
       </StyledSignIn>
     </StyledHeaderDiv>
   );
 };
-
 export default Header;
