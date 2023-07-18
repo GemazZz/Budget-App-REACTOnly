@@ -12,7 +12,9 @@ import {
   StyledLinkSpan,
 } from "../components/styles/signStyle";
 import { Link, useNavigate } from "react-router-dom";
-
+if (!localStorage.getItem("users")) {
+  localStorage.setItem("users", JSON.stringify([]));
+}
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +27,19 @@ const SignUp = () => {
   };
   const uploadUser = () => {
     if (!email || !password) {
-      alert("Please fill out the form completely");
+      alert("Please fill the form completely");
+      return;
+    }
+    if (!email.includes("@")) {
+      alert("Email is NOT valid. (does NOT contain '@')");
+      return;
+    }
+    if (password.length < 6) {
+      alert("Password is NOT valid. (Use at least 6 character)");
+      return;
+    }
+    if (password.length > 20) {
+      alert("Password is NOT valid. (Use no more than 20 character)");
       return;
     }
     const existData = localStorage.getItem("users");

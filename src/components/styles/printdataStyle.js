@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 
 export const StyledPrintDataDiv = styled.div`
   height: 120px;
+  width: 699.7px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -54,6 +55,20 @@ export const StyledPrintEditBtn = styled.button`
 
 export const StyledContentDiv = styled.div`
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex: 2;
   height: min(400px);
+`;
+
+export const StyledCommandDiv = styled.div`
+  position: relative;
+  margin-top: 200px;
+  border: 1.5px ridge #764920;
+  background-color: #373737;
+  border-radius: 5px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 45px;
+  color: #d1d1d1;
 `;
