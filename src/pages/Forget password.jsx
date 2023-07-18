@@ -7,8 +7,6 @@ import {
   StyledAmountLabel,
   StyledDateInput,
   StyledNumberInput,
-  StyledNew,
-  StyledForget,
 } from "../components/styles/signStyle";
 import { Link } from "react-router-dom";
 

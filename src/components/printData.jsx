@@ -12,9 +12,11 @@ const PrintData = () => {
   if (!localStorage.getItem("expenses")) {
     localStorage.setItem("expenses", JSON.stringify([]));
   }
+  const currentUserId = JSON.parse(localStorage.getItem("id"));
   const data = localStorage.getItem("expenses");
   const [parseData, setParseData] = useState(JSON.parse(data));
 
+  const printParseDate = parseData.filter((user) => user.userId === currentUserId);
   const dltExpense = (id) => {
     const updatedData = parseData.filter((exp) => exp.id !== id);
     localStorage.setItem("expenses", JSON.stringify(updatedData));
@@ -23,7 +25,7 @@ const PrintData = () => {
 
   return (
     <StyledContentDiv>
-      {parseData.map((exp) => (
+      {printParseDate.map((exp) => (
         <StyledPrintDataDiv key={exp.id} value={exp.type}>
           <StyledDataP>Created at: {exp.date}</StyledDataP>
           <StyledDataP>Category: {exp.category}</StyledDataP>

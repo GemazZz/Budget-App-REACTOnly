@@ -7,7 +7,7 @@ export const StyledPrintDataDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  background-color: ${(props) => (props.value === "income" ? "#3db03d88" : "#c81d1d72")};
+  background-color: ${(props) => (props.value === "Income" ? "#3db03d88" : "#c81d1d72")};
   padding-left: 10px;
   gap: 5px;
   margin-bottom: 12px;
@@ -20,7 +20,7 @@ export const StyledDataP = styled.p`
 `;
 
 export const StyledColoredP = styled.p`
-  color: ${(props) => (props.value === "income" ? "rgb(102, 254, 102)" : "#fa6262")};
+  color: ${(props) => (props.value === "Income" ? "rgb(102, 254, 102)" : "#fa6262")};
   font-family: "Times New Roman", Times, serif;
 `;
 

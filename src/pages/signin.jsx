@@ -1,4 +1,4 @@
-import { hover } from "@testing-library/user-event/dist/hover";
+import { useState } from "react";
 import {
   StyledDiv,
   StyledCloseBtn,
@@ -10,10 +10,32 @@ import {
   StyledNumberInput,
   StyledNew,
   StyledForget,
+  StyledLinkSpan,
 } from "../components/styles/signStyle";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const checkUser = () => {
+    if (!email || !password) {
+      alert("Please fill out the form completely");
+      return;
+    }
+    const existData = localStorage.getItem("users");
+    const parseExistData = JSON.parse(existData);
+    const findUser = parseExistData.filter((user) => {
+      return user.email === email && user.password === password;
+    });
+    if (findUser.length === 0) {
+      alert("User not found");
+      return;
+    }
+    console.log(findUser);
+    localStorage.setItem("id", JSON.stringify(findUser[0].userId));
+    navigate("/");
+  };
   return (
     <StyledDiv>
       <Link to={"/"}>
@@ -24,22 +46,39 @@ const SignIn = () => {
       <StyledTransactionH1>Sign in</StyledTransactionH1>
       <div>
         <StyledDateLabel htmlFor="Email">Email: </StyledDateLabel>
-        <StyledDateInput type="email" id="Email" />
+        <StyledDateInput
+          type="email"
+          id="Email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
       </div>
       <div>
         <StyledAmountLabel htmlFor="amount">Password: </StyledAmountLabel>
-        <StyledNumberInput type="password" id="amount" />
+        <StyledNumberInput
+          type="password"
+          id="amount"
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
       </div>
       <Link to={"/forgetpassword"} style={{ textDecorationLine: "none" }}>
         <StyledForget>Forget Password?</StyledForget>
       </Link>
-      <Link to={"/"}>
-        <StyledSubmitBtn className="submit">Sign in</StyledSubmitBtn>
-      </Link>
+      <StyledSubmitBtn
+        className="submit"
+        onClick={() => {
+          checkUser();
+        }}
+      >
+        Sign in
+      </StyledSubmitBtn>
       <StyledNew>
         Don't have an account?
         <Link to={"/signup"} style={{ textDecorationLine: "#d1d1d1", color: "#764920", marginLeft: "4px" }}>
-          Register Here
+          <StyledLinkSpan>Register Here</StyledLinkSpan>
         </Link>
       </StyledNew>
     </StyledDiv>

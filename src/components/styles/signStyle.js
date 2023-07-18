@@ -130,6 +130,7 @@ export const StyledForget = styled.div`
   text-decoration-line: #764920;
   transition: 0.25s;
   &:hover {
+    color: #d1d1d1;
     scale: 1.05;
   }
 `;
@@ -137,4 +138,11 @@ export const StyledNew = styled.div`
   color: #d1d1d1;
   margin-top: 10px;
   text-decoration: #d1d1d1;
+`;
+
+export const StyledLinkSpan = styled.span`
+  transition: 0.2s;
+  &:hover {
+    color: #d1d1d1;
+  }
 `;
