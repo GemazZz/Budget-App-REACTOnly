@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   StyledDiv,
   StyledCloseBtn,
@@ -8,9 +9,41 @@ import {
   StyledDateInput,
   StyledNumberInput,
 } from "../components/styles/signStyle";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ForgetPass = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const newPassSet = () => {
+    const usersData = JSON.parse(localStorage.getItem("users"));
+    const emailValid = usersData.find((user) => {
+      return user.email === email;
+    });
+    const notUpdatePassword = usersData.filter((user) => {
+      return user.email !== email;
+    });
+    if (!emailValid) {
+      alert("User with this email does not exist");
+    }
+    if (password.length < 6) {
+      alert("Password is NOT valid. (Use at least 6 character)");
+      return;
+    }
+    if (password.length > 20) {
+      alert("Password is NOT valid. (Use no more than 20 character)");
+      return;
+    }
+    const userData = {
+      userId: new Date().getTime(),
+      email,
+      password,
+    };
+    const newData = [...notUpdatePassword, userData];
+    localStorage.setItem("users", JSON.stringify(newData));
+    alert("Password changed successfully");
+    navigate("/signin");
+  };
   return (
     <StyledDiv>
       <Link to={"/"}>
@@ -21,15 +54,32 @@ const ForgetPass = () => {
       <StyledTransactionH1>Password Recovery</StyledTransactionH1>
       <div style={{ position: "relative", left: "14.5px" }}>
         <StyledDateLabel htmlFor="Email">Email: </StyledDateLabel>
-        <StyledDateInput type="email" id="Email" />
+        <StyledDateInput
+          type="email"
+          id="Email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
       </div>
       <div style={{ position: "relative", left: "-5px" }}>
         <StyledAmountLabel htmlFor="amount">New Password: </StyledAmountLabel>
-        <StyledNumberInput type="password" id="amount" />
+        <StyledNumberInput
+          type="password"
+          id="amount"
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
       </div>
-      <Link to={"/"}>
-        <StyledSubmitBtn className="submit">Update</StyledSubmitBtn>
-      </Link>
+      <StyledSubmitBtn
+        className="submit"
+        onClick={() => {
+          newPassSet();
+        }}
+      >
+        Update
+      </StyledSubmitBtn>
     </StyledDiv>
   );
 };

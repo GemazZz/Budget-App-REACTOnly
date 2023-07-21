@@ -26,6 +26,14 @@ const SignUp = () => {
     password,
   };
   const uploadUser = () => {
+    const usersData = JSON.parse(localStorage.getItem("users"));
+    const emailValid = usersData.find((user) => {
+      return user.email === email;
+    });
+    if (emailValid) {
+      alert("User with this email ALREADY exist ");
+      return;
+    }
     if (!email || !password) {
       alert("Please fill the form completely");
       return;
@@ -46,7 +54,7 @@ const SignUp = () => {
     const parseExistData = JSON.parse(existData);
     const fullData = [userData, ...parseExistData];
     localStorage.setItem("users", JSON.stringify(fullData));
-    navigate("/");
+    navigate("/signin");
   };
   return (
     <StyledDiv>

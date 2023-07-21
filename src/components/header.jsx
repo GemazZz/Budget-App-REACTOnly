@@ -1,5 +1,5 @@
 import { StyledHeaderDiv, StyledAddNewTransaction, StyledBudgetApp, StyledSignIn, StyledI } from "./styles/headerStyle";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -20,6 +20,15 @@ const Header = () => {
       navigate("/addtransaction");
     }
   };
+  const signInFunc = () => {
+    const UserId = JSON.parse(localStorage.getItem("id"));
+    if (UserId) {
+      alert("You are ALREADY signed in");
+      return;
+    } else {
+      navigate("/signin");
+    }
+  };
   return (
     <StyledHeaderDiv>
       <StyledBudgetApp>
@@ -27,9 +36,13 @@ const Header = () => {
       </StyledBudgetApp>
       <StyledAddNewTransaction onClick={() => logInCheck()}>Add New Transaction</StyledAddNewTransaction>
       <StyledSignIn>
-        <Link to={"/signin"}>
-          <StyledI className="fa-solid fa-user fa-2xl" style={{ color: "#764920" }} />
-        </Link>
+        <StyledI
+          className="fa-solid fa-user fa-2xl"
+          style={{ color: "#764920" }}
+          onClick={() => {
+            signInFunc();
+          }}
+        />
         <StyledI
           className="fa-solid fa-arrow-right-from-bracket fa-2xl"
           style={{ color: "#bc1f1f" }}

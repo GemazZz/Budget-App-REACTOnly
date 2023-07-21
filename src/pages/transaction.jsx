@@ -60,10 +60,10 @@ const Transaction = () => {
       <StyledTransactionH1>New transaction</StyledTransactionH1>
       <div>
         <StyledGreenLabel htmlFor="Income">Income </StyledGreenLabel>
-        <input type="radio" value="Income" name="source" onClick={() => typeCheckerIncome()} />
+        <input type="radio" value="Income" name="source" id="Income" onClick={() => typeCheckerIncome()} />
 
         <StyledRedLabel htmlFor="Expense">Expense </StyledRedLabel>
-        <StyledRadioInput type="radio" value="Expense" name="source" onChange={() => typeCheckerExpense()} />
+        <StyledRadioInput type="radio" value="Expense" name="source" id="Expense" onClick={() => typeCheckerExpense()} />
       </div>
       <div>
         <StyledLabel htmlFor="category">Category: </StyledLabel>

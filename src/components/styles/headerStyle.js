@@ -44,9 +44,6 @@ export const StyledSignIn = styled.button`
   cursor: pointer;
   background-color: transparent;
   transition: 0.25s;
-  /* &:hover {
-    scale: 1.2;
-  } */
 `;
 
 export const StyledI = styled.i`
