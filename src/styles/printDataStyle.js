@@ -64,7 +64,7 @@ export const StyledContentDiv = styled.div`
 export const StyledCommandDiv = styled.div`
   position: absolute;
   margin-top: 200px;
-  margin-left: 170px;
+  margin-left: 150px;
   border: 1.5px ridge #764920;
   background-color: #373737;
   border-radius: 5px;

@@ -80,6 +80,7 @@ const Filter = (props) => {
         {type === "Expense" && <option value="Gym">Gym</option>}
         {type === "Expense" && <option value="Shopping">Shopping</option>}
         {type === "Expense" && <option value="Family">Family</option>}
+        {type === "Expense" && <option value="Other">Other</option>}
       </StyledSelect>
       <StyledLabel htmlFor="min">Min: </StyledLabel>
       <StyledInputNumber

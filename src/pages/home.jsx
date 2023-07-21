@@ -2,9 +2,9 @@ import "../App.css";
 import Header from "../components/header";
 import Filter from "../components/filter";
 import PrintData from "../components/printData";
-import { StyledStatsDiv } from "../components/styles/statsStyle";
 import { styled } from "styled-components";
 import { useState } from "react";
+import Stats from "../components/stats";
 
 const StyledMainDiv = styled.div`
   width: 100vw;
@@ -58,7 +58,7 @@ const Home = () => {
       <StyledMainDiv>
         <Filter onFiltersSelect={onFiltersSelect} />
         <PrintData currentExpenses={currentExpenses} dltExpense={dltExpense} />
-        <StyledStatsDiv />
+        <Stats currentExpenses={currentExpenses} />
       </StyledMainDiv>
     </>
   );

@@ -81,6 +81,7 @@ const Transaction = () => {
           {type === "Expense" && <option value="Gym">Gym</option>}
           {type === "Expense" && <option value="Shopping">Shopping</option>}
           {type === "Expense" && <option value="Family">Family</option>}
+          {type === "Expense" && <option value="Others">Others</option>}
         </StyledSelect>
       </div>
       <div>

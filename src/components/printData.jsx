@@ -7,7 +7,7 @@ import {
   StyledDataP,
   StyledContentDiv,
   StyledCommandDiv,
-} from "./styles/printdataStyle";
+} from "../styles/printDataStyle";
 
 const PrintData = (props) => {
   if (!localStorage.getItem("expenses")) {
