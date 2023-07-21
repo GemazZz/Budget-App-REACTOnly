@@ -10,7 +10,7 @@ import {
   StyledNumberInput,
   StyledNew,
   StyledLinkSpan,
-} from "../components/styles/signStyle";
+} from "../styles/signStyle";
 import { Link, useNavigate } from "react-router-dom";
 if (!localStorage.getItem("users")) {
   localStorage.setItem("users", JSON.stringify([]));

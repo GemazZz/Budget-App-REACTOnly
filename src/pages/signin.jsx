@@ -11,7 +11,7 @@ import {
   StyledNew,
   StyledForget,
   StyledLinkSpan,
-} from "../components/styles/signStyle";
+} from "../styles/signStyle";
 import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {

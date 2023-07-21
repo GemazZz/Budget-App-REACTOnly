@@ -1,4 +1,4 @@
-import { StyledHeaderDiv, StyledAddNewTransaction, StyledBudgetApp, StyledSignIn, StyledI } from "./styles/headerStyle";
+import { StyledHeaderDiv, StyledAddNewTransaction, StyledBudgetApp, StyledSignIn, StyledI } from "../styles/headerStyle";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {

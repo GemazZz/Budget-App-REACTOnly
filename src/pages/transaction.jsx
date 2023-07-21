@@ -13,7 +13,7 @@ import {
   StyledAmountLabel,
   StyledDateInput,
   StyledNumberInput,
-} from "../components/styles/transactionStyle";
+} from "../styles/transactionStyle";
 import { Link, useNavigate } from "react-router-dom";
 
 const Transaction = () => {

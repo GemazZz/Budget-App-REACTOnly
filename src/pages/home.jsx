@@ -1,4 +1,3 @@
-import "../App.css";
 import Header from "../components/header";
 import Filter from "../components/filter";
 import PrintData from "../components/printData";

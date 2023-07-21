@@ -9,7 +9,7 @@ import {
   StyledInputNumber,
   StyledGreenLabel,
   StyledRedLabel,
-} from "./styles/filterStyle";
+} from "../styles/filterStyle";
 
 const Filter = (props) => {
   const [category, setCategory] = useState();

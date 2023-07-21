@@ -8,7 +8,7 @@ import {
   StyledAmountLabel,
   StyledDateInput,
   StyledNumberInput,
-} from "../components/styles/signStyle";
+} from "../styles/signStyle";
 import { Link, useNavigate } from "react-router-dom";
 
 const ForgetPass = () => {
