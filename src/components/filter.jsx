@@ -60,10 +60,28 @@ const Filter = (props) => {
       <StyledLabel htmlFor="type">Type: </StyledLabel>
       <div id="type">
         <StyledGreenLabel htmlFor="Income">Income </StyledGreenLabel>
-        <StyledRadioInput type="radio" value="income" id="Income" name="source" onClick={() => typeCheckerIncome()} />
+        <StyledRadioInput
+          type="radio"
+          value="income"
+          id="Income"
+          name="source"
+          onClick={() => typeCheckerIncome()}
+          onChange={(e) => {
+            setCategory();
+          }}
+        />
 
         <StyledRedLabel htmlFor="Expense">Expense </StyledRedLabel>
-        <StyledRadioInput type="radio" value="expense" id="Expense" name="source" onClick={() => typeCheckerExpense()} />
+        <StyledRadioInput
+          type="radio"
+          value="expense"
+          id="Expense"
+          name="source"
+          onClick={() => typeCheckerExpense()}
+          onChange={(e) => {
+            setCategory();
+          }}
+        />
       </div>
       <StyledLabel htmlFor="category">Category: </StyledLabel>
       <StyledSelect
@@ -72,7 +90,7 @@ const Filter = (props) => {
           setCategory(e.target.value);
         }}
       >
-        <option value="" selected>
+        <option value="empty" selected>
           Select one
         </option>
         {type === "Income" && <option value="Salary">Salary</option>}

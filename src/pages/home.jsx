@@ -46,6 +46,7 @@ const Home = () => {
   const [currentExpenses, setCurrentExpenses] = useState(printParseData);
 
   const onFiltersSelect = (filters) => {
+    console.log(filters);
     const filteredExpenses = filtering(printParseData, filters);
     setCurrentExpenses(filteredExpenses);
   };
