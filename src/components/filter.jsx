@@ -66,7 +66,7 @@ const Filter = (props) => {
           id="Income"
           name="source"
           onClick={() => typeCheckerIncome()}
-          onChange={(e) => {
+          onChange={() => {
             setCategory();
           }}
         />
@@ -78,7 +78,7 @@ const Filter = (props) => {
           id="Expense"
           name="source"
           onClick={() => typeCheckerExpense()}
-          onChange={(e) => {
+          onChange={() => {
             setCategory();
           }}
         />
