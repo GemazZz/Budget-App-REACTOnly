@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   StyledPrintDataDiv,
   StyledPrintDltBtn,
@@ -9,8 +10,12 @@ import {
 } from "../styles/printDataStyle";
 
 const PrintData = (props) => {
+  const navigate = useNavigate();
   const currentUserId = JSON.parse(localStorage.getItem("id"));
   const printParseData = props.currentExpenses;
+  const editExpense = (id) => {
+    navigate(`/edittransaction/` + id);
+  };
 
   return (
     <StyledContentDiv>
@@ -25,7 +30,7 @@ const PrintData = (props) => {
           <StyledPrintDltBtn onClick={() => props.dltExpense(exp.id)}>
             <i className="fa-regular fa-circle-xmark fa-lg" />
           </StyledPrintDltBtn>
-          <StyledPrintEditBtn>
+          <StyledPrintEditBtn onClick={() => editExpense(exp.id)}>
             <i className="fa-regular fa-pen-to-square fa-lg" />
           </StyledPrintEditBtn>
         </StyledPrintDataDiv>

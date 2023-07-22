@@ -7,6 +7,7 @@ import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 import Transaction from "./pages/transaction";
 import ForgetPass from "./pages/Forget password";
+import EditTransaction from "./pages/editTransaction";
 import "./App.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/addtransaction",
     element: <Transaction />,
+  },
+  {
+    path: "/edittransaction/:id",
+    element: <EditTransaction />,
   },
   {
     path: "/signin",
