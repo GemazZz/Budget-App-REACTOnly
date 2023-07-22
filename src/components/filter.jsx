@@ -72,7 +72,7 @@ const Filter = (props) => {
           setCategory(e.target.value);
         }}
       >
-        <option value="empty" selected>
+        <option value="" selected>
           Select one
         </option>
         {type === "Income" && <option value="Salary">Salary</option>}
@@ -80,7 +80,7 @@ const Filter = (props) => {
         {type === "Expense" && <option value="Gym">Gym</option>}
         {type === "Expense" && <option value="Shopping">Shopping</option>}
         {type === "Expense" && <option value="Family">Family</option>}
-        {type === "Expense" && <option value="Other">Other</option>}
+        {type === "Expense" && <option value="Others">Others</option>}
       </StyledSelect>
       <StyledLabel htmlFor="min">Min: </StyledLabel>
       <StyledInputNumber
