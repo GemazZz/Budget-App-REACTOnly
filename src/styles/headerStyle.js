@@ -34,7 +34,7 @@ export const StyledBudgetApp = styled.p`
   color: #d1d1d1;
   font-weight: 500;
   font-size: 25px;
-  cursor: default;
+  cursor: pointer;
 `;
 
 export const StyledSignIn = styled.button`

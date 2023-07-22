@@ -31,7 +31,11 @@ const Header = () => {
   };
   return (
     <StyledHeaderDiv>
-      <StyledBudgetApp>
+      <StyledBudgetApp
+        onClick={() => {
+          window.location.reload();
+        }}
+      >
         <i className="fa-solid fa-chart-pie" style={{ color: "#764920" }}></i> Budget App
       </StyledBudgetApp>
       <StyledAddNewTransaction onClick={() => logInCheck()}>Add New Transaction</StyledAddNewTransaction>
