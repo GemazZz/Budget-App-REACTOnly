@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const StyledPrintDataDiv = styled.div`
-  height: 120px;
+  height: 115px;
   width: 699.7px;
   position: relative;
   display: flex;

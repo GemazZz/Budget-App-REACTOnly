@@ -40,7 +40,7 @@ if (!localStorage.getItem("expenses")) {
   localStorage.setItem("expenses", JSON.stringify([]));
 }
 const Home = () => {
-  const [parseData, setParseData] = useState(JSON.parse(localStorage.getItem("expenses")));
+  const parseData = JSON.parse(localStorage.getItem("expenses"));
   const currentUserId = JSON.parse(localStorage.getItem("id"));
   const [printParseData, setPrintParseData] = useState(parseData.filter((user) => user.userId === currentUserId));
   const [currentExpenses, setCurrentExpenses] = useState(printParseData);
