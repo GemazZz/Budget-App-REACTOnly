@@ -25,6 +25,7 @@ const ForgetPass = () => {
     });
     if (!emailValid) {
       alert("User with this email does not exist");
+      return;
     }
     if (password.length < 6) {
       alert("Password is NOT valid. (Use at least 6 character)");

@@ -7,6 +7,7 @@ import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 import Transaction from "./pages/transaction";
 import ForgetPass from "./pages/Forget password";
+import "./App.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
