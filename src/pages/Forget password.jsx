@@ -15,14 +15,20 @@ const ForgetPass = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
   const newPassSet = () => {
     const usersData = JSON.parse(localStorage.getItem("users"));
-    const emailValid = usersData.find((user) => {
+    const emailValid = usersData.filter((user) => {
       return user.email === email;
     });
     const notUpdatePassword = usersData.filter((user) => {
       return user.email !== email;
     });
+    const userData = {
+      userId: emailValid[0].userId,
+      email,
+      password,
+    };
     if (!emailValid) {
       alert("User with this email does not exist");
       return;
@@ -35,11 +41,6 @@ const ForgetPass = () => {
       alert("Password is NOT valid. (Use no more than 20 character)");
       return;
     }
-    const userData = {
-      userId: new Date().getTime(),
-      email,
-      password,
-    };
     const newData = [...notUpdatePassword, userData];
     localStorage.setItem("users", JSON.stringify(newData));
     alert("Password changed successfully");
