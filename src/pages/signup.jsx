@@ -12,9 +12,7 @@ import {
   StyledLinkSpan,
 } from "../styles/signStyle";
 import { Link, useNavigate } from "react-router-dom";
-if (!localStorage.getItem("users")) {
-  localStorage.setItem("users", JSON.stringify([]));
-}
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

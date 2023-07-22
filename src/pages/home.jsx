@@ -33,7 +33,12 @@ function filtering(array, filters) {
     return true;
   });
 }
-
+if (!localStorage.getItem("users")) {
+  localStorage.setItem("users", JSON.stringify([]));
+}
+if (!localStorage.getItem("expenses")) {
+  localStorage.setItem("expenses", JSON.stringify([]));
+}
 const Home = () => {
   const [parseData, setParseData] = useState(JSON.parse(localStorage.getItem("expenses")));
   const currentUserId = JSON.parse(localStorage.getItem("id"));

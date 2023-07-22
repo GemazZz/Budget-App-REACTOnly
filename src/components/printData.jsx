@@ -10,12 +10,7 @@ import {
 } from "../styles/printDataStyle";
 
 const PrintData = (props) => {
-  if (!localStorage.getItem("expenses")) {
-    localStorage.setItem("expenses", JSON.stringify([]));
-  }
   const currentUserId = JSON.parse(localStorage.getItem("id"));
-  const [parseData, setParseData] = useState(JSON.parse(localStorage.getItem("expenses")));
-
   const printParseData = props.currentExpenses;
 
   return (
