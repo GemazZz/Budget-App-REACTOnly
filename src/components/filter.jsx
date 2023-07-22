@@ -40,7 +40,9 @@ const Filter = (props) => {
     if (type) {
       filters["type"] = type;
     }
-
+    if ((filters["category"] = "empty")) {
+      delete filters["category"];
+    }
     if (category) {
       filters["category"] = category;
     }
@@ -90,7 +92,7 @@ const Filter = (props) => {
           setCategory(e.target.value);
         }}
       >
-        <option value="empty" selected>
+        <option value="" selected>
           Select one
         </option>
         {type === "Income" && <option value="Salary">Salary</option>}
