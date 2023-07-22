@@ -59,9 +59,6 @@ const Home = () => {
     setCurrentExpenses(updatedPrintData);
     setPrintParseData(updatedData);
   };
-  const editTransaction = (id) => {
-    const updatedData = printParseData.filter((exp) => exp.id !== id);
-  };
   return (
     <>
       <Header />
