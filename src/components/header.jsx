@@ -1,10 +1,13 @@
-import { StyledHeaderDiv, StyledAddNewTransaction, StyledBudgetApp, StyledSignIn, StyledI } from "../styles/headerStyle";
+import { StyledHeaderDiv, StyledAddNewTransaction, StyledBudgetApp, StyledSignIn, StyledI, StyledEmailP } from "../styles/headerStyle";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
+  const currentUser = JSON.parse(localStorage.getItem("id"));
+  const parseExistData = JSON.parse(localStorage.getItem("users"));
+  const userData = parseExistData.filter((user) => user.userId === currentUser);
   const logOut = () => {
-    if (!JSON.parse(localStorage.getItem("id"))) {
+    if (!currentUser) {
       return;
     } else {
       localStorage.removeItem("id");
@@ -12,7 +15,7 @@ const Header = () => {
     }
   };
   const logInCheck = () => {
-    if (!JSON.parse(localStorage.getItem("id"))) {
+    if (!currentUser) {
       alert("Log in First");
       navigate("/signin");
       return;
@@ -21,8 +24,7 @@ const Header = () => {
     }
   };
   const signInFunc = () => {
-    const UserId = JSON.parse(localStorage.getItem("id"));
-    if (UserId) {
+    if (currentUser) {
       alert("You are ALREADY signed in");
       return;
     } else {
@@ -31,6 +33,7 @@ const Header = () => {
   };
   return (
     <StyledHeaderDiv>
+      {currentUser && <StyledEmailP>{userData[0].email}</StyledEmailP>}
       <StyledBudgetApp
         onClick={() => {
           window.location.reload();

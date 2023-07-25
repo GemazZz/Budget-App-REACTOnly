@@ -40,6 +40,14 @@ const SignUp = () => {
       alert("Email is NOT valid. (does NOT contain '@')");
       return;
     }
+    if (email.length < 6) {
+      alert("Email is NOT valid. (Too short)");
+      return;
+    }
+    if (email.length > 30) {
+      alert("Email is NOT valid. (Too Long)");
+      return;
+    }
     if (password.length < 6) {
       alert("Password is NOT valid. (Use at least 6 character)");
       return;

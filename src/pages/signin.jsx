@@ -23,16 +23,18 @@ const SignIn = () => {
       alert("Please fill out the form completely");
       return;
     }
-    const existData = localStorage.getItem("users");
-    const parseExistData = JSON.parse(existData);
-    const findUser = parseExistData.filter((user) => {
-      return user.email === email && user.password === password;
-    });
+    const parseExistData = JSON.parse(localStorage.getItem("users"));
+    const findEmail = parseExistData.filter((user) => user.email === email);
+    const findUser = parseExistData.filter((user) => user.email === email && user.password === password);
+
+    if (findEmail.length !== 0 && findUser.length === 0) {
+      alert("Password is Incorrect");
+      return;
+    }
     if (findUser.length === 0) {
       alert("User not found");
       return;
     }
-    console.log(findUser);
     localStorage.setItem("id", JSON.stringify(findUser[0].userId));
     navigate("/");
   };

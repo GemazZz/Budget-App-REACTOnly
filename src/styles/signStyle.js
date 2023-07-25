@@ -60,7 +60,7 @@ export const StyledInput = styled.input`
 export const StyledDateInput = styled.input`
   position: relative;
   left: 17px;
-  width: 160px;
+  width: 180px;
   margin-top: 10px;
   margin-bottom: 10px;
   border: none;
@@ -84,7 +84,7 @@ export const StyledNumberInput = styled.input`
   font-family: "Times New Roman", Times, serif;
   position: relative;
   left: 5px;
-  width: 160px;
+  width: 180px;
   margin-top: 10px;
   margin-bottom: 10px;
   border: none;

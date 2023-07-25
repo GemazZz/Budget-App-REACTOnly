@@ -53,3 +53,13 @@ export const StyledI = styled.i`
     scale: 1.2;
   }
 `;
+
+export const StyledEmailP = styled.p`
+  position: absolute;
+  left: 1020px;
+  margin: 10px;
+  font-family: "Times New Roman", Times, serif;
+  color: #d1d1d1;
+  font-weight: 500;
+  font-size: 25px;
+`;
