@@ -31,7 +31,6 @@ const Stats = (props) => {
 
   const salary = sumCategory(printParseData, "Salary");
   const check = sumCategory(printParseData, "Check");
-  const gym = sumCategory(printParseData, "Gym");
   const shopping = sumCategory(printParseData, "Shopping");
   const family = sumCategory(printParseData, "Family");
   const others = sumCategory(printParseData, "Others");
@@ -39,7 +38,6 @@ const Stats = (props) => {
   const topArr = [
     { category: "Salary", sum: salary },
     { category: "Check", sum: check },
-    { category: "Gym", sum: gym },
     { category: "Shopping", sum: shopping },
     { category: "Family", sum: family },
     { category: "Others", sum: others },
@@ -80,7 +78,6 @@ const Stats = (props) => {
         <h1>Stats:</h1>
         <StyledP>Salary: {salary}</StyledP>
         <StyledP>Check: {check}</StyledP>
-        <StyledP>Gym: {gym}</StyledP>
         <StyledP>Shopping: {shopping}</StyledP>
         <StyledP>Family: {family}</StyledP>
         <StyledP>Others: {others}</StyledP>

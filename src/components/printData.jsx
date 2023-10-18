@@ -25,7 +25,7 @@ const PrintData = (props) => {
         <StyledPrintDataDiv key={exp.id} value={exp.type}>
           <StyledDataP>Created at: {exp.date}</StyledDataP>
           <StyledDataP>Category: {exp.category}</StyledDataP>
-          <StyledDataP>Amount: {exp.amount}</StyledDataP>
+          <StyledDataP>Amount: {exp.amount}₾</StyledDataP>
           <StyledColoredP value={exp.type}>{exp.type}</StyledColoredP>
           <StyledPrintDltBtn onClick={() => props.dltExpense(exp.id)}>
             <i className="fa-regular fa-circle-xmark fa-lg" />

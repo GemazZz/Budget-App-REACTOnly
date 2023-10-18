@@ -56,8 +56,8 @@ const Home = () => {
     const updatedData = printParseData.filter((exp) => exp.id !== id);
     localStorage.setItem("expenses", JSON.stringify(updatedData));
     const updatedPrintData = currentExpenses.filter((exp) => exp.id !== id);
-    setCurrentExpenses(updatedPrintData);
     setPrintParseData(updatedData);
+    setCurrentExpenses(updatedPrintData);
   };
   return (
     <>
