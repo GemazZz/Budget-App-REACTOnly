@@ -97,6 +97,7 @@ const Filter = (props) => {
         </option>
         {type === "Income" && <option value="Salary">Salary</option>}
         {type === "Income" && <option value="Check">Check</option>}
+        {type === "Income" && <option value="Bonus">Bonus</option>}
         {type === "Expense" && <option value="Shopping">Shopping</option>}
         {type === "Expense" && <option value="Family">Family</option>}
         {type === "Expense" && <option value="Others">Others</option>}
